@@ -1,0 +1,56 @@
+##############################################################################
+# Copyright (c) Members of the EGEE Collaboration. 2004.
+# See http://www.eu-egee.org/partners/ for details on the copyright
+# holders.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS
+# OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+##############################################################################
+#
+# NAME :        se_storm_gridftp
+#
+# DESCRIPTION : This files contain the function list that configures
+#               the StoRM gridftp_dsi server 3.2 (SL5).
+#
+# AUTHORS :     grid-release@lists.infn.it
+#
+# NOTES :
+#
+# YAIM MODULE:  yaim-storm
+#
+#############################################################################
+
+# INFN-GRID: start from ig-ce list
+#            commented out unwanted functions
+se_storm_gridftp_FUNCTIONS="
+config_ntp
+config_add_pool_env
+config_ldconf
+config_sysconfig_edg
+config_crl
+config_host_certs
+config_edgusers
+config_users
+config_mkgridmap
+config_vomsdir
+config_vomsmap
+config_lcas_lcmaps_gt4
+config_storm_globus_gridftp
+"
+
+#config_sysconfig_globus
+#config_sysconfig_lcg
+#config_nfs_sw_dir_server
+#config_lcgenv
+
+
