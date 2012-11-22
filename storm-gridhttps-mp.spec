@@ -1,7 +1,7 @@
 Summary: emi storm-gridhttps-server metapackage
 Name: emi-storm-gridhttps-mp
 Version: 1.0.0
-Release: 3.sl5
+Release: 3%{?dist}
 License: Apache License 2.0
 Vendor: EMI
 Group: System Environment/Libraries
