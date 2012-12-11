@@ -17,7 +17,6 @@ Requires: storm-gridhttps-plugin
 Requires: storm-dynamic-info-provider
 Requires: glite-yaim-bdii
 Requires: edg-mkgridmap
-Requires: emir-serp
 
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
