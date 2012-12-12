@@ -1,4 +1,4 @@
-BACKEND_AGE := 2
+BACKEND_AGE := 3
 BACKEND_VERSION := 1.2.0
 FRONTEND_AGE := 2
 FRONTEND_VERSION := 1.1.0
@@ -24,12 +24,12 @@ RPM_RPM := $(RPM_MAIN_DIR)/RPMS
 RPM_SRPM := $(RPM_MAIN_DIR)/SRPMS
 RPM_DIRS := $(RPM_MAIN_DIR) $(RPM_SOURCE) $(RPM_SPEC) $(RPM_BUILD) $(RPM_RPM) $(RPM_SRPM)
 
-osdist := $(shell `cat /etc/redhat-release | awk 'BEGIN {FS="release "} {print $2}'| awk 'BEGIN {FS="."} {print $1}'`)
+osdist=`cat /etc/redhat-release | awk -F "release " '{ print $$2 }' | awk -F "." '{ print $$1 }'`
 
 all: be-rpm fe-rpm gftp-rpm ghttp-rpm client-rpm
 
 be-rpm: be-srpm
-	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .$(osdist)"  $(RPM_SRPM)/emi-storm-backend-mp-$(BACKEND_VERSION)-$(BACKEND_AGE).src.rpm
+	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .sl$(osdist)"  $(RPM_SRPM)/emi-storm-backend-mp-$(BACKEND_VERSION)-$(BACKEND_AGE).src.rpm
 
 be-srpm: rpm-path be-tar
 	@cp -u emi-storm-backend-mp-$(BACKEND_VERSION).tar.gz $(RPM_SOURCE)
