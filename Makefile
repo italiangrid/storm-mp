@@ -29,7 +29,7 @@ osdist := $(shell `cat /etc/redhat-release | awk 'BEGIN {FS="release "} {print $
 all: be-rpm fe-rpm gftp-rpm ghttp-rpm client-rpm
 
 be-rpm: be-srpm
-	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist $(osdist)"  $(RPM_SRPM)/emi-storm-backend-mp-$(BACKEND_VERSION)-$(BACKEND_AGE).src.rpm
+	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .$(osdist)"  $(RPM_SRPM)/emi-storm-backend-mp-$(BACKEND_VERSION)-$(BACKEND_AGE).src.rpm
 
 be-srpm: rpm-path be-tar
 	@cp -u emi-storm-backend-mp-$(BACKEND_VERSION).tar.gz $(RPM_SOURCE)
