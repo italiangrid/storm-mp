@@ -42,7 +42,7 @@ be-tar:
 	@rm -rf emi-storm-backend-mp-$(BACKEND_VERSION)
 
 fe-rpm: fe-srpm
-	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist $(osdist)"  $(RPM_SRPM)/emi-storm-frontend-mp-$(FRONTEND_VERSION)-$(FRONTEND_AGE).src.rpm
+	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .el$(osdist)"  $(RPM_SRPM)/emi-storm-frontend-mp-$(FRONTEND_VERSION)-$(FRONTEND_AGE).src.rpm
 
 fe-srpm: rpm-path fe-tar
 	@cp -u emi-storm-frontend-mp-$(FRONTEND_VERSION).tar.gz $(RPM_SOURCE)
@@ -55,7 +55,7 @@ fe-tar:
 	@rm -rf emi-storm-frontend-mp-$(FRONTEND_VERSION)
 
 gftp-rpm: gftp-srpm
-	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist $(osdist)"  $(RPM_SRPM)/emi-storm-globus-gridftp-mp-$(GLOBUS_GRIDFTP_VERSION)-$(GLOBUS_GRIDFTP_AGE).src.rpm
+	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .el$(osdist)"  $(RPM_SRPM)/emi-storm-globus-gridftp-mp-$(GLOBUS_GRIDFTP_VERSION)-$(GLOBUS_GRIDFTP_AGE).src.rpm
 
 gftp-srpm: rpm-path gftp-tar
 	@cp -u emi-storm-globus-gridftp-mp-$(GLOBUS_GRIDFTP_VERSION).tar.gz $(RPM_SOURCE)
@@ -68,7 +68,7 @@ gftp-tar:
 	@rm -rf emi-storm-globus-gridftp-mp-$(GLOBUS_GRIDFTP_VERSION)
 
 ghttp-rpm: ghttp-srpm
-	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist $(osdist)"  $(RPM_SRPM)/emi-storm-gridhttps-mp-$(GRIDHTTPS_VERSION)-$(GRIDHTTPS_AGE).src.rpm
+	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .el$(osdist)"  $(RPM_SRPM)/emi-storm-gridhttps-mp-$(GRIDHTTPS_VERSION)-$(GRIDHTTPS_AGE).src.rpm
 
 ghttp-srpm: rpm-path ghttp-tar
 	@cp -u emi-storm-gridhttps-mp-$(GRIDHTTPS_VERSION).tar.gz $(RPM_SOURCE)
@@ -81,7 +81,7 @@ ghttp-tar:
 	@rm -rf emi-storm-gridhttps-mp-$(GRIDHTTPS_VERSION)
 
 client-rpm: client-srpm
-	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist $(osdist)"  $(RPM_SRPM)/emi-storm-srm-client-mp-$(CLIENT_VERSION)-$(CLIENT_AGE).src.rpm
+	@rpmbuild  --rebuild --define "_topdir $(RPM_MAIN_DIR)" --define "dist .el$(osdist)"  $(RPM_SRPM)/emi-storm-srm-client-mp-$(CLIENT_VERSION)-$(CLIENT_AGE).src.rpm
 
 client-srpm: rpm-path client-tar
 	@cp -u emi-storm-srm-client-mp-$(CLIENT_VERSION).tar.gz $(RPM_SOURCE)
