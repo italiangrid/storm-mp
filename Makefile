@@ -95,3 +95,6 @@ client-tar:
 
 rpm-path:
 	@mkdir -p $(RPM_DIRS)
+
+clean:
+	@rm -rf $(RPM_MAIN_DIR) *.tar.gz
