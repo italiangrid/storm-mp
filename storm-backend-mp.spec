@@ -1,7 +1,7 @@
 Summary: emi storm-backend-server metapackage
 Name: emi-storm-backend-mp
 Version: 1.2.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: Apache License
 Vendor: EMI
 Group: System Environment/Libraries
